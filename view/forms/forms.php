@@ -43,11 +43,11 @@
             </div>
             <div class="form-group">
                 <label for="inputAddress">Adresse</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 rue de">
             </div>
             <div class="form-group">
                 <label for="inputAddress2">Complément d'adresse</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Appartement, batiments, ..">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -55,7 +55,7 @@
                 <input type="text" class="form-control" id="inputCity">
                 </div>
                 <div class="form-group col-md-4">
-                <label for="inputState">State</label>
+                <label for="inputState">Pays</label>
                 <select id="inputState" class="form-control">
                     <option selected>Choose...</option>
                     <option>France</option>

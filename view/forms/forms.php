@@ -22,7 +22,15 @@
                 <path fill-rule="evenodd" d="M3.61 7.687A.5.5 0 014 7.5h12a.5.5 0 01.488.608l-1.826 8.217a1.5 1.5 0 01-1.464 1.175H6.802a1.5 1.5 0 01-1.464-1.175L3.512 8.108a.5.5 0 01.098-.42z" clip-rule="evenodd"></path>
             </svg>
         Bartender Life</p>
+
         <form>
+        <div class="mb-3">
+        <svg class="bi bi-chevron-left" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M13.354 3.646a.5.5 0 010 .708L7.707 10l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z" clip-rule="evenodd"></path>
+        </svg>
+        <a href="../login/login.php" class="return">Retours</a>
+        </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>

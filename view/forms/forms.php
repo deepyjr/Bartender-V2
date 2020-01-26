@@ -23,7 +23,7 @@
             </svg>
         Bartender Life</p>
 
-        <form>
+        <!-- back button -->
         <div class="mb-3">
         <svg class="bi bi-chevron-left" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M13.354 3.646a.5.5 0 010 .708L7.707 10l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z" clip-rule="evenodd"></path>
@@ -31,46 +31,63 @@
         <a href="../login/login.php" class="return">Retours</a>
         </div>
 
+
+
+        <form action="ajouter.php" method="post">
+     
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" >
                 </div>
+
                 <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" >
                 </div>
             </div>
-            <div class="form-group">
-                <label for="inputAddress">Adresse</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 rue de">
-            </div>
-            <div class="form-group">
-                <label for="inputAddress2">Complément d'adresse</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Appartement, batiments, ..">
-            </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <label for="inputCity">Ville</label>
-                <input type="text" class="form-control" id="inputCity">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" name="nom">
                 </div>
+
+                <div class="form-group col-md-6">
+                <label for="prenom">Prenom</label>
+                <input type="text" class="form-control" name="prenom">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="adresse">Adresse</label>
+                <input type="text" class="form-control" name="adresse" placeholder="1234 rue de">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="ville">Ville</label>
+                <input type="text" class="form-control" name="ville">
+                </div>
+
                 <div class="form-group col-md-4">
-                <label for="inputState">Pays</label>
-                <select id="inputState" class="form-control">
+                <label for="pays">Pays</label>
+                <select name="pays" class="form-control">
                     <option selected>Choose...</option>
-                    <option>France</option>
-                    <option>France</option>
-                    <option>France</option>
-                    <option>France</option>
-                    
+                    <option value="france">France</option>
+                    <option value="france">France</option>
+                    <option value="france">France</option>
+                    <option value="france">France</option>
                 </select>
                 </div>
+
                 <div class="form-group col-md-2">
-                <label for="inputZip">Postal</label>
-                <input type="text" class="form-control" id="inputZip">
+                <label for="postal">Postal</label>
+                <input type="text" class="form-control" name="postal">
                 </div>
+
             </div>
-            <button type="submit" class="btn btn-primary">S'inscrire</button>
+            <button type="submit" value="envoyer" class="btn btn-primary">S'inscrire</button>
         </form>
     </div>
 

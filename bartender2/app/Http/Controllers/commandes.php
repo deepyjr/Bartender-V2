@@ -41,22 +41,22 @@ class commandes extends Controller
      */
     public function store(Request $request)
     {
+        
         //newCommand  = request au format json
         $newCommand = $request->all();
+        /*
         $commandToDdd['boisson_id'] = $newCommand['boisson_id'];
         $commandToDdd['user_id'] = '1';
         $commandToDdd['etat'] = 'En attente';
-
-        $commandesdbb::create($commandesdbb->all());
-        return view('commandes@index');
-        /*
-        $newCommand = array(
-            'etat' => 'En attante',
-            'user_id' => '1', //TODO modifier cette valeur par defaut
-            'boisson_id' => $request->boisson_id,
-        );
-        $commandesdbb::create($newCommand->all());
         */
+        DB::table('commandes')->insert([
+            'boisson_id' => $newCommand['boisson_id'],
+            'user_id' => '1', 
+            'etat' => 'En attente' 
+            ]);
+
+        return redirect()->route('commandes.index');
+
     }
 
     /**

@@ -24,9 +24,13 @@
                 <h2> {{ $boisson->nom }}</h2>
                   <p class="card-text">{{ $boisson->description }}</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" href="{{ route('commandes.store' )}}" class="btn btn-outline-secondary" >Commander</button>
-                    </div>
+                    <form action="{{ route('commandes.store' )}}" method="POST">
+                    @csrf
+                      <input type="hidden" name="boisson_id" value="{{ $boisson->id }}" />
+                      <div class="btn-group">
+                        <input type="submit" value="Commander" class="btn btn-outline-secondary" />
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>

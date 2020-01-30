@@ -7,6 +7,13 @@ use DB;
 
 class history extends Controller
 {
+
+    private function dateDiff($date1, $date2){
+        //On ajoute une heure a $date1 pour etre sur le fuseau horraire francais
+        $date1 = $date1 + 60*60;
+        $retour = round(abs($date1 - $date2) /60);
+        return $retour;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,15 +23,21 @@ class history extends Controller
     {
         $historys = DB::table('commandes')
         ->join('boissons', 'commandes.boisson_id', '=', 'boissons.id')
-        ->select('commandes.etat', 'boissons.nom', 'boissons.img_path', 'boissons.description')
+        ->select('commandes.etat', 'boissons.nom', 'boissons.img_path', 'boissons.description', 'commandes.date_commande')
         ->where('etat', '=', 'termine')
         ->orderBy('commandes.date_commande', 'desc')
         ->get();
 
-        //$currentTime = new DateTime("Y-m-d H:i:s");
-        //$dateDiff = $currentTime->diff(new DateTime($historys->date_commande));
-        $dateDiff = '5 min';
-        return view('history.history', ['historys' => $historys, 'dateDiff' => $dateDiff]);  
+        foreach($historys as $history){
+            
+            $date1 = strtotime($history->date_commande);
+            $now = strtotime(date('Y-m-d H:i:s'));
+            $interval = $this->dateDiff($now, $date1);
+            //$history->dateDiff = 'Il y a: '.$interval['hour'].' heure(s) '.$interval['minute'].' minute(s) '. $interval['second']. 'seconde(s)';
+            $history->dateDiff = 'Boisson livrée il y a '. $interval . ' minute(s)';
+        }
+
+        return view('history.history', ['historys' => $historys]);  
     }
 
     /**

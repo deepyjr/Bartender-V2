@@ -11,7 +11,8 @@
             <div class="card-body">
                 <h5 class="card-title">{{$history->nom}}</h5>
                 <p class="card-text">{{$history->description}}</p>
-                <p class="card-text"><small class="text-muted">{{ $dateDiff }}</small></p>
+                <p class="card-text"><small class="text-muted">{{ $history->dateDiff }}</small></p>
+                
             </div>
             </div>
         </div>

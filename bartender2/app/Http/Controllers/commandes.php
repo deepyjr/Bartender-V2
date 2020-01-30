@@ -18,7 +18,7 @@ class commandes extends Controller
         $detailsCommandes = DB::table('commandes')
         ->join('boissons', 'commandes.boisson_id', '=', 'boissons.id')
         ->select('commandes.etat', 'boissons.nom', 'boissons.img_path', 'boissons.description')
-        ->orderBy('commandes.date_commande', 'desc')
+        ->orderBy('commandes.date_commande', 'ASC')
         ->get();
         return view('currentOrders.currentOrders', compact('detailsCommandes'));   
     }
@@ -44,11 +44,6 @@ class commandes extends Controller
         
         //newCommand  = request au format json
         $newCommand = $request->all();
-        /*
-        $commandToDdd['boisson_id'] = $newCommand['boisson_id'];
-        $commandToDdd['user_id'] = '1';
-        $commandToDdd['etat'] = 'En attente';
-        */
         DB::table('commandes')->insert([
             'boisson_id' => $newCommand['boisson_id'],
             'user_id' => '1', 

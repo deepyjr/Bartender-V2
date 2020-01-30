@@ -29,11 +29,9 @@ class history extends Controller
         ->get();
 
         foreach($historys as $history){
-            
             $date1 = strtotime($history->date_commande);
             $now = strtotime(date('Y-m-d H:i:s'));
             $interval = $this->dateDiff($now, $date1);
-            //$history->dateDiff = 'Il y a: '.$interval['hour'].' heure(s) '.$interval['minute'].' minute(s) '. $interval['second']. 'seconde(s)';
             $history->dateDiff = 'Boisson livrée il y a '. $interval . ' minute(s)';
         }
 
